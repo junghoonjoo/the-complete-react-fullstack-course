@@ -1,22 +1,25 @@
-import React, { Component } from 'react'
+import React, { useRef } from 'react'
 
-export default class App extends Component {
-    constructor(props){
-        super(props)
+const App=()=>{
 
-        this.textInput=React.createRef();
-    }
 
-  triggerHandler = ()=>{
-    console.log(this.textInput.current.value);
+    const textInput=useRef();
+    const triggerHandler = ()=>{
+    console.log(textInput.current.value);
   }
-  render() {
+
     return (
       <>
         <h1>Form: </h1>
-        <input type='text' ref={this.textInput}/>
-        <button onClick={this.triggerHandler}>Trigger</button>
+        <InputComponent ref={textInput}/>
+        <button onClick={triggerHandler}>Trigger</button>
       </>
     );
-  }
+  
 }
+
+
+const InputComponent=React.forwardRef((props,ref)=>{
+    return (<input type='text' ref={ref}/>);
+});
+export default App;
