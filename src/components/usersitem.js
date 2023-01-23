@@ -1,8 +1,10 @@
-import React from 'react'
+import React,{useContext} from 'react';
+import { MyContext } from '../context';
 
-const Usersitem = (props) => {
+const Usersitem = () => {
 
-    console.log('props',props);
+    const context=useContext(MyContext);
+    console.log(context);
   return (
     <>
         user item

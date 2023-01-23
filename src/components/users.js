@@ -4,7 +4,7 @@ import Usersitem
 const Users = (props) => {
   return (
     <>
-        <Usersitem {...props}/>
+        <Usersitem/>
     </>
   );
 }

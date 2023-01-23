@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import Post from './post';
 import Users from './components/users';
+import { MyProvider } from './context';
 
 const App=(props)=> {
 
@@ -11,9 +12,9 @@ const App=(props)=> {
         {id:3, name:'Mark'},
     ]
     return (
-        <>
-            <Users users={users} />
-        </>
+        <MyProvider>
+            <Users/>
+        </MyProvider>
     );
 
     // const [state,setState]=useState({
