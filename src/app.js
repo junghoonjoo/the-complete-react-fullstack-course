@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 
 const App=(props)=> {
 
@@ -14,7 +14,18 @@ const App=(props)=> {
         }
     ]);
 
+    const hey='hello';
+    const alertSomething=()=>alert("Something");
+
     //console.log(state);
+    useEffect(()=>{
+        console.log(state);
+    },[state]);
+
+    useEffect(()=>{
+        console.log(posts);
+    },[posts]);
+
 
     const restOne=()=>{
         setState(prevState=>{
