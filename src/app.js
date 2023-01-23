@@ -18,13 +18,17 @@ const App=(props)=> {
     const alertSomething=()=>alert("Something");
 
     //console.log(state);
-    useEffect(()=>{
-        console.log(state);
-    },[state]);
+    // useEffect(()=>{
+    //     console.log(state);
+    // },[state]);
+
+    // useEffect(()=>{
+    //     console.log(posts);
+    // },[posts]);
 
     useEffect(()=>{
-        console.log(posts);
-    },[posts]);
+        console.log('Mounted')
+    },[])
 
 
     const restOne=()=>{
