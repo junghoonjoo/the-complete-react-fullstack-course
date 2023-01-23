@@ -8,13 +8,21 @@ class MyProvider extends Component {
         users:[
             {id:1, name:'Francis'},
             {id:2, name:'Steve'},
-            {id:3, name:'Mark'},
-        ]
+            {id:3, name:'Mark'},     
+        ],
+        active:true
     }
 
+    toggleActive=()=>{
+        this.setState({active:!this.state.active});
+    }
     render(){
         return(
-          <MyContext.Provider value={this.state}>
+          <MyContext.Provider value={{
+            users:this.state.users,
+            active: this.state.active,
+            toggleActive:this.toggleActive,
+          }}>
             {this.props.children}
 
           </MyContext.Provider>      
